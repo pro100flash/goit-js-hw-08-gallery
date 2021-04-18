@@ -4,7 +4,7 @@ const refs = {
   gallery: document.querySelector('.js-gallery'),
   modal: document.querySelector('.js-lightbox'),
   modalImg: document.querySelector('.lightbox__image'),
-  window: document.body
+  // window: document.body
 }
 
 const cardsMarkup = creatGalleryMarkup(galleryList);
@@ -13,7 +13,7 @@ refs.gallery.insertAdjacentHTML('beforeend', cardsMarkup);
 // Слушатели
 refs.gallery.addEventListener('click', toOpenModal);
 refs.modal.addEventListener('click', closeModal);
-refs.window.addEventListener('keydown', closeModal);
+document.addEventListener('keydown', onButtonKey);
 
 // Разметка
 function creatGalleryMarkup(galleryList) {
@@ -59,7 +59,9 @@ function closeModal(event) {
   if(event.target.classList.contains('lightbox__button')) {
     toCloseModal();
   };
+}
 
+function onButtonKey(event) {
   if(event.code === 'Escape') {
     toCloseModal();
   };
