@@ -7,7 +7,7 @@ const refs = {
   // window: document.body
 }
 
-const cardsMarkup = creatGalleryMarkup(galleryList);
+const cardsMarkup = createGalleryMarkup(galleryList);
 refs.gallery.insertAdjacentHTML('beforeend', cardsMarkup);
 
 // Слушатели
@@ -16,7 +16,7 @@ refs.modal.addEventListener('click', closeModal);
 document.addEventListener('keydown', onButtonKey);
 
 // Разметка
-function creatGalleryMarkup(galleryList) {
+function createGalleryMarkup(galleryList) {
   return galleryList
   .map(({preview, original, description}) => {
     return `<li class="gallery__item">
