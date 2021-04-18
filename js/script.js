@@ -18,7 +18,8 @@ window.addEventListener('keydown', onButtonKey);
 function createGalleryMarkup(galleryList) {
   return galleryList
   .map(({preview, original, description}) => {
-    return `<li class="gallery__item">
+    return `
+    <li class="gallery__item">
     <a
     class="gallery__link"
     href="${original}"
