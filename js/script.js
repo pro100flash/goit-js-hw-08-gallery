@@ -4,7 +4,6 @@ const refs = {
   gallery: document.querySelector('.js-gallery'),
   modal: document.querySelector('.js-lightbox'),
   modalImg: document.querySelector('.lightbox__image'),
-  // window: document.body
 }
 
 const cardsMarkup = createGalleryMarkup(galleryList);
@@ -13,7 +12,7 @@ refs.gallery.insertAdjacentHTML('beforeend', cardsMarkup);
 // Слушатели
 refs.gallery.addEventListener('click', toOpenModal);
 refs.modal.addEventListener('click', closeModal);
-document.addEventListener('keydown', onButtonKey);
+window.addEventListener('keydown', onButtonKey);
 
 // Разметка
 function createGalleryMarkup(galleryList) {
