@@ -12,7 +12,6 @@ refs.gallery.insertAdjacentHTML('beforeend', cardsMarkup);
 // Слушатели
 refs.gallery.addEventListener('click', toOpenModal);
 refs.modal.addEventListener('click', closeModal);
-// window.addEventListener('keydown', onButtonKey);
 
 // Разметка
 function createGalleryMarkup(galleryList) {
