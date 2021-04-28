@@ -12,7 +12,7 @@ refs.gallery.insertAdjacentHTML('beforeend', cardsMarkup);
 // Слушатели
 refs.gallery.addEventListener('click', toOpenModal);
 refs.modal.addEventListener('click', closeModal);
-window.addEventListener('keydown', onButtonKey);
+// window.addEventListener('keydown', onButtonKey);
 
 // Разметка
 function createGalleryMarkup(galleryList) {
@@ -44,19 +44,18 @@ function toOpenModal(event) {
   event.preventDefault()
   refs.modal.classList.add('is-open');
   refs.modalImg.setAttribute('src', event.target.getAttribute('data-source'));
+  window.addEventListener('keydown', onButtonKey);
 }
 
 function toCloseModal() {
   refs.modal.classList.remove('is-open');
   refs.modalImg.removeAttribute('src');
+  Window.removeEventListener('keydown', onButtonKey);
 }
 
 function closeModal(event) {
-  if(event.target.classList.contains('lightbox__overlay')) {
-    toCloseModal();
-  };
-
-  if(event.target.classList.contains('lightbox__button')) {
+  if(event.target.classList.contains('lightbox__overlay') ||
+     event.target.classList.contains('lightbox__button')) {
     toCloseModal();
   };
 }
