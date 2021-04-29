@@ -49,7 +49,7 @@ function toOpenModal(event) {
 function toCloseModal() {
   refs.modal.classList.remove('is-open');
   refs.modalImg.removeAttribute('src');
-  Window.removeEventListener('keydown', onButtonKey);
+  window.removeEventListener('keydown', onButtonKey);
 }
 
 function closeModal(event) {
